@@ -12,5 +12,12 @@ namespace GetYourlLine.Models
         public string DateTime { get; set; }
         public string RegisteredTime { get; set; }
         public string Status { get; set; }
+
+        //public virtual Customer Customer { get; set; }
+
+        public CustomerDetail()
+        {
+
+        }
     }
 }

@@ -8,6 +8,8 @@ namespace GetYourlLine.Models
 {
     public class CustomerContext : DbContext
     {
+       
+
         public DbSet<Customer> Customers { get; set; }
         public DbSet<CustomerDetail> CustomerDetails { get; set; }
     }

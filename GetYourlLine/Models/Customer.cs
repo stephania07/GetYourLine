@@ -14,10 +14,11 @@ namespace GetYourlLine.Models
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
 
+        public virtual CustomerDetail CustomerDetails { get; set;}
 
-        //public Customer()
-        //{
-        //}
+        public Customer()
+        {
+        }
         public Customer(string Service, string FirstName, string LastName, string Email, string PhoneNumber)
         {
 

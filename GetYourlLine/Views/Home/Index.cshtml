@@ -1,27 +1,40 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html ng-app="GetYourlLine">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Line</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/angular.min.js"></script>
+</head>
+<body>
 
-<div class="jumbotron">
-    <h1>Get Your Line</h1>
-    <p class="lead">Get Your Line is a small app that estimates the time based on the number of customers who place themselves inline online and walks to the office as well.</p>
-    
-</div>
-
-<div class="row">
-    <div class="col-md-offset-3">
-        <div class="form-group">
-            <label>Service</label>
-            <select>
-                <option>New Applicant</option>
-                <option>Existing</option>
-            </select>
-            <label>First Name</label>
-                <input type="text" />
-            <label>Email</label>
-                <input type="email" />
-                <input type="submit" class="btn btn-default" value="Submit" />
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <span class="navbar-brand">GetYourLine</span>
+                
+            </div>
         </div>
     </div>
- </div>
-   
+    <div class="container container-fluid-content">
+      <div ng-view></div>
+    </div>
+    </body>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</html>
+
+
+@*@* Just practicing for connecting the angular with mvc /so this has connectionn with layout@model string
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+Hello {{ 1 + 1}} the @Model*@
+
+
+@*@{
+    ViewBag.Title = "Home Page";
+}*@

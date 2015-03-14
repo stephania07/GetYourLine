@@ -3,12 +3,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
+using GetYourlLine;
 
 namespace GetYourlLine.Repository
 {
-    public class CustomerRepository
+    public class CustomerRepository : ICustomerRepository
     {
         private CustomerContext _dbContext;
+
+        public CustomerRepository(string connetion = "GetYourlLine.Models.CustomerContext") 
+        {
+            _dbContext = new CustomerContext();
+            _dbContext.Customers.Load();
+        }
 
         public void Clear()
         {

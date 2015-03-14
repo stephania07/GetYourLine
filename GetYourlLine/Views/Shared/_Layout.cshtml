@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@*@model string
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -6,9 +7,10 @@
     <title>@ViewBag.Title - Get Your Line</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <script src="~/Scripts/angular.min.js"></script>
 </head>
-<body>
+<body ng-app>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -41,4 +43,4 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
-</html>
+</html>*@
