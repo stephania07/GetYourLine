@@ -9,9 +9,13 @@ namespace GetYourlLine.Repository
 {
     public interface ICustomerRepository
     {
-        int GetCount();
-        void Add(Customer C);
-        //void Delete(Customer C);
+        int GetCountCustomers();
+        int GetCountCustomerDetails();
+        void AddCustomers(Customer C);
+        void AddCustomerDetails(CustomerDetail D);
+        void DeleteCustomer(Customer C);
+        void DeleteCustomerDetails(CustomerDetail D);
         void Clear();
+       // void GetCustomerNumber();
     }
 }

@@ -24,25 +24,49 @@ namespace GetYourlLine.Tests.Repository
         [TestMethod]
         public void TestAddToDatabase()
         {
-            Assert.AreEqual(0, repo.GetCount());
-            repo.Add(new Customer("Existing","John","Robert","J@gmail.com","1234567899"));
-            Assert.AreEqual(1, repo.GetCount());
+            Assert.AreEqual(0, repo.GetCountCustomers());
+            repo.AddCustomers(new Customer("Existing","John","Robert","J@gmail.com","1234567899"));
+            Assert.AreEqual(1, repo.GetCountCustomers());
         }
 
         [TestMethod]
-        public void TestGetCount()
+        public void TestGetCountCustomers()
         {
-            Assert.AreEqual(0, repo.GetCount());
-            repo.Add(new Customer("New Applicant", "John", "Robert", "J@gmail.com", "1234567899"));
-            Assert.AreEqual(1, repo.GetCount());
+            Assert.AreEqual(0, repo.GetCountCustomers());
+            repo.AddCustomers(new Customer("New Applicant", "John", "Robert", "J@gmail.com", "1234567899"));
+            Assert.AreEqual(1, repo.GetCountCustomers());
         }
 
         [TestMethod]
-        public void TestClear()
-        { 
-            repo.Add(new Customer("New Applicant", "John", "Robert", "J@gmail.com", "1234567899"));
+        public void TestClearCustomers()
+        {
+            repo.AddCustomers(new Customer("New Applicant", "John", "Robert", "J@gmail.com", "1234567899"));
             repo.Clear();
-            Assert.AreEqual(0, repo.GetCount());
+            Assert.AreEqual(0, repo.GetCountCustomers());
+        }
+
+        [TestMethod]
+        public void TestAddToCustomerDetails()
+        {
+            Assert.AreEqual(0, repo.GetCountCustomerDetails());
+           // repo.AddCustomerDetails(new CustomerDetail("9:30:52 AM", "8:30:52 AM", "1", "3"));
+            Assert.AreEqual(1, repo.GetCountCustomers());
+        }
+
+        [TestMethod]
+        public void TestGetCountCustomerDetails()
+        {
+            Assert.AreEqual(0, repo.GetCountCustomers());
+           // repo.AddCustomerDetails(new CustomerDetail("10:30:52 AM",  "9:30:52 AM", "1", "2"));
+            Assert.AreEqual(1, repo.GetCountCustomers());
+        }
+
+        [TestMethod]
+        public void TestClearCustomerDetails()
+        {
+           // repo.AddCustomerDetails(new CustomerDetail("11:30:52 AM", "10:30:52 AM", "1", "2"));
+            repo.Clear();
+            Assert.AreEqual(0, repo.GetCountCustomerDetails());
         }
 
        
